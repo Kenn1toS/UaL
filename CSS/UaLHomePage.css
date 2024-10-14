@@ -1,0 +1,8 @@
+body{
+    background-position: center;
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    background-color: #262a31;
+    background-image: url(../Sours/sablon-logotipa-akademii_126177-original.svg);
+    height: 100vh;
+}
