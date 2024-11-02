@@ -13,19 +13,31 @@
 
     
     <div class="containerREG"> 
-        <div class="containerSearch">
-            <button class="searchButton"></button>
-            <input class="search" type="text">
+        <form onsubmit=" return checkForm(this)" method="post">
+            <div class="borderContainerSearch">
+                <div class="containerSearch">
+                    <button id="searchButtonLogin" class="searchButton"></button>
+                    <input name="login" class="search" type="text" id="login" placeholder="логін">
+                </div>
+            <p class="warning" id="warningLogin"></p>
+            </div>
+            <div class="borderContainerSearch">
+                <div class="containerSearch">
+                    <button id="searchButtonPassword"  class="searchButton"></button>
+                    <input name="password" class="search" type="text" id="password" placeholder="пароль">
+                </div>
+            <p class="warning" id="warningPassword"></p>
         </div>
-        <div class="containerSearch">
-            <button class="searchButton"></button>
-            <input class="search" type="text">
+        <div id="searchContainer">
+            
         </div>
         <div class="containerHelp">
-            <a href="" >Регестрація</a>
-            <a href="">Не можу зайти</a>
+            <a href="" id="addSearchButton">Регестрація</a>
+            <a href="" id="removeLink">Не можу зайти</a>
         </div>
-        <button class="login">Увійти</button>
+        
+        <button type="submit" class="Enter" id="Enter">Увійти</button>
+        </form>
     </div>
 <script src="../JS/UaLHomePage.js"></script>
 </body>
