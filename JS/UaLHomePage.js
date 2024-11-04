@@ -1,45 +1,35 @@
-// Находим кнопку по ID
 const addButton = document.getElementById('addSearchButton');
 
-// Добавляем обработчик события на кнопку
 addButton.addEventListener('click', function(event) {
-    // Предотвращаем стандартное поведение кнопки
     event.preventDefault();
 const links = document.querySelectorAll('.containerHelp a');
     links.forEach(link => {
         if (link.textContent === "Не можу зайти") {
-            link.remove(); // Удаляем ссылку с текстом "Не можу зайти"
+            link.remove(); 
         }
     });
-    // Проверяем, добавлен ли уже элемент
     if (addButton.dataset.added) {
-        return; // Если элемент уже добавлен, выходим из функции
+        return; 
     }
 
-    // Устанавливаем атрибут, чтобы пометить, что элемент добавлен
     addButton.dataset.added = 'true';
-
-    // Создаем новый div для контейнера поиска
+    const borderContainerSearch = document.createElement('div');
+    borderContainerSearch.className = 'borderContainerSearch';
     const newContainer = document.createElement('div');
     newContainer.className = 'containerSearch';
-
-    // Создаем кнопку внутри нового div
-    const newButton = document.createElement('button');
+    const newButton = document.createElement('div');
     newButton.className = 'searchButton';
     newButton.textContent = '';
-
-    // Создаем input внутри нового div
     const newInput = document.createElement('input');
     newInput.className = 'search';
     newInput.type = 'text';
     newInput.placeholder = 'повтор пароля';
 
-    // Вставляем кнопку и input в контейнер
+    borderContainerSearch.appendChild(newContainer);
     newContainer.appendChild(newButton);
     newContainer.appendChild(newInput);
 
-    // Добавляем новый контейнер в основной контейнер
-    document.getElementById('searchContainer').appendChild(newContainer);
+    document.getElementById('searchContainer').appendChild(borderContainerSearch);
 });
 const searchButtonLogin = document.getElementById('searchButtonLogin');
 const searchButtonPassword = document.getElementById('searchButtonPassword');
@@ -75,6 +65,7 @@ function checkPassword() {
         document.getElementById("warningPassword").innerHTML = "Не підходить";
     } else {
         searchButtonPassword.classList.add('success');
+        document.getElementById("warningPassword").innerHTML = "";
     }
 }
 function validateForm() {
