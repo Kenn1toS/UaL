@@ -2,6 +2,16 @@ body {
     background: linear-gradient(to bottom, #00009e, #000000);
     height: 700vh;
 }
+.redText {
+    color: red;
+    font-weight: bold;
+}
+
+.greenText {
+    color: green;
+    font-weight: bold;
+}
+
 .header{
     display: flex;
     flex-direction: row;
@@ -13,40 +23,16 @@ body {
     display: flex;
     flex-direction: row;
     margin: auto;
-    padding: 0px 70px 0px 70px;
     background-color: black;
     width: 60%; 
     height: 100px;
     min-width: 500px;
     border-radius:0px 0px 50px 50px;
 }
-
-.nav button {
-    flex: 1;
-    color: #ffffff;
-    height: 100%; 
-    overflow: hidden;
-}
-@media (max-width: 800px) { 
-    .nav {
-        background-color: black;
-        width: 100%; 
-    }
-}
-@media (max-width: 570px) { 
-    .header {
-        background-color: black;
-        width: 100%; 
-        border-radius: 0px ;
-        bottom: 0;
-    }
-    .buttonAccount {
-        position: fixed;
-        top: 0;
-        left: 0;
-    }
-}
 .buttonAccount {
+    position: fixed; 
+    top: 0%; 
+    right: 0%; 
     display: flex;
     align-items: center;
 }
@@ -54,3 +40,77 @@ body {
     width: 80px;
     height: 80px;
 }
+.accountSynchronization{
+
+}
+.nav button {
+    width: 20%;
+    color: #ffffff;
+    height: 100%; 
+    overflow: hidden;
+}
+.nav button:nth-of-type(1) {
+    padding-left: 10%;
+    width: 30%;
+    border-radius:0px 0px 0px 50px;
+}
+.nav button:nth-of-type(4) {
+    padding-right: 10%;
+    width: 30%;
+    border-radius:0px 0px 50px 0px;
+}
+.nav button:hover {
+    background-color: #ffffff19;
+    color: #ffffff;
+    height: 100%; 
+    overflow: hidden;
+    transition: 0.5s;
+}
+@media (max-width: 800px) { 
+    .nav {
+        background-color: black;
+        width: 100%; 
+        margin-right: 0%;
+    }
+    .accountSynchronization{
+        display: none;
+    }
+    .buttonAccount {
+        position: static; 
+        display: flex;
+        align-items: center;
+    }
+}
+@media (max-width: 600px) { 
+    .header {
+        background-color: black;
+        width: 100%; 
+        border-radius: 0px ;
+        bottom: 0;
+    }
+    .accountSynchronization{
+        display: flex;
+    }
+    .buttonAccount {
+        position: fixed;
+        top: 0;
+        right: 0;
+        flex-direction: row;
+    }
+    .nav button:nth-of-type(1) {
+        padding-left: 0%;
+        width: 30%;
+        border-radius:0px 0px 0px 50px;
+    }
+    .nav button:nth-of-type(4) {
+        padding-right: 0%;
+        width: 30%;
+        border-radius:0px 0px 50px 0px;
+    }
+}
+@media (min-width: 800px) and (max-width: 1170px) {
+    .buttonAccount {
+        flex-direction: column;
+    }
+}
+
